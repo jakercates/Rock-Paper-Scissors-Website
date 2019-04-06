@@ -1,6 +1,7 @@
 let userScore = 0;
 let computerScore = 0;
 let userWin = 0;
+resetBtn = document.querySelector('.resetBtn');
 
 //returns the computer's choice randomly
 function computerPlay()
@@ -111,7 +112,36 @@ function userPicked(e)
 	score1 = document.querySelector('.score1');
 	score2 = document.querySelector('.score2');
 	score1.textContent = userScore;
-	score2.textContent = computerScore; 
+	score2.textContent = computerScore;
+
+	//check for end of game(user or computer has reached 3 points)
+	if(userScore == 3)
+	{
+		par.textContent = "Congratulations! You beat the computer. Click the Reset button to play again."
+		resetBtn.style.visibility = 'visible';
+		console.log(resetBtn.visibility);
+		btnDiv = document.querySelector('.btns');
+		btnDiv.style.visibility = 'hidden';
+	}
+	else if(computerScore == 3)
+	{
+		par.textContent = "Game Over - Better luck next time! Click the Reset button to play again.";
+		
+		resetBtn.style.visibility = "visible";
+		btnDiv = document.querySelector('.btns');
+		btnDiv.style.visibility = 'hidden';
+	}
+}
+
+function reset()
+{
+	userScore = 0;
+	computerScore = 0;
+	par.textContent = "Select rock, paper or scissors!";
+	score1.textContent = userScore;
+	score2.textContent = computerScore;
+	btnDiv.style.visibility = 'visible';
+	resetBtn.style.visibility = 'hidden';
 }
 
 paperBtn = document.querySelector('.paperBtn');
@@ -120,3 +150,5 @@ rockBtn = document.querySelector('.rockBtn');
 rockBtn.addEventListener('click', userPicked);
 scissorsBtn = document.querySelector('.scissorsBtn');
 scissorsBtn.addEventListener('click', userPicked);
+ 
+resetBtn.addEventListener('click', reset);

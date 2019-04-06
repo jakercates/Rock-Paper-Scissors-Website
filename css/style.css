@@ -22,7 +22,7 @@ h2 {
 	font-family: cursive;
 }
 
-.btns {
+.btns, .reset {
 	display: flex;
 	margin-top: 0px;
 	justify-content: center;
@@ -42,6 +42,11 @@ h2 {
 	height: 8rem;
 }
 
+.resetBtn {
+	margin-top: 1rem;
+	visibility: hidden; 
+}
+
 .score1, .score2 {
 	display: block;
 	margin-top: .5rem;
@@ -57,7 +62,7 @@ h2 {
 	
 }
 
-.rockBtn, .paperBtn, .scissorsBtn {
+.rockBtn, .paperBtn, .scissorsBtn, .resetBtn {
 	width: 14rem ;
 	height: 3rem;
 	background-color: #17845e;
@@ -68,12 +73,12 @@ h2 {
 	font-size: 1.5rem;
 }
 
-.rockBtn:hover, .paperBtn:hover, .scissorsBtn:hover {
+.rockBtn:hover, .paperBtn:hover, .scissorsBtn:hover, .resetBtn:hover {
 	background-color: #0c472b;
 	cursor: pointer;
 }
 
-.rockBtn:focus, .paperBtn:focus, .scissorsBtn:focus {
+.rockBtn:focus, .paperBtn:focus, .scissorsBtn:focus, .resetBtn:focus {
 	outline: 0;
 }
 
