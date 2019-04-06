@@ -117,7 +117,7 @@ function userPicked(e)
 	//check for end of game(user or computer has reached 3 points)
 	if(userScore == 3)
 	{
-		par.textContent = "Congratulations! You beat the computer. Click the Reset button to play again."
+		par.textContent = "Congratulations! You beat the computer.";
 		resetBtn.style.visibility = 'visible';
 		console.log(resetBtn.visibility);
 		btnDiv = document.querySelector('.btns');
@@ -125,7 +125,7 @@ function userPicked(e)
 	}
 	else if(computerScore == 3)
 	{
-		par.textContent = "Game Over - Better luck next time! Click the Reset button to play again.";
+		par.textContent = "Game Over - Better luck next time!";
 		
 		resetBtn.style.visibility = "visible";
 		btnDiv = document.querySelector('.btns');
