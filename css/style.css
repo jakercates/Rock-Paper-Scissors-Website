@@ -1,0 +1,91 @@
+html body {
+	margin: 0px;
+	padding: 0;
+}
+
+h2 {
+	margin-bottom: 0;
+	text-align: center; 
+}
+
+.scoreboard {
+	display: flex;
+	flex: 1;
+	min-height: 25vh;
+	align-items: center;
+	justify-content: center;
+}
+
+.welcome {
+	margin-top: 3rem;
+	font-size: 2rem;
+	font-family: cursive;
+}
+
+.btns {
+	display: flex;
+	margin-top: 0px;
+	justify-content: center;
+}
+
+.scoreLabel {
+	display: block;
+	font-size: 2rem;
+}
+
+.userScore, .computerScore {
+	border: .4rem solid black;
+	border-radius: .5rem;
+	text-align: center;
+	padding: .5rem .5rem;
+	width: 10rem;
+	height: 8rem;
+}
+
+.score1, .score2 {
+	display: block;
+	margin-top: .5rem;
+	font-size: 4rem;
+}
+
+.userScore {
+	margin-right: 2rem;
+	
+}
+.computerScore {
+	margin-left: 2rem;
+	
+}
+
+.rockBtn, .paperBtn, .scissorsBtn {
+	width: 14rem ;
+	height: 3rem;
+	background-color: #17845e;
+	color: #ffffff;
+	border: .2rem solid #062319;
+	border-radius: 1rem;
+	margin-right: 1rem;
+	font-size: 1.5rem;
+}
+
+.rockBtn:hover, .paperBtn:hover, .scissorsBtn:hover {
+	background-color: #0c472b;
+	cursor: pointer;
+}
+
+.rockBtn:focus, .paperBtn:focus, .scissorsBtn:focus {
+	outline: 0;
+}
+
+.rockBtn {
+	margin-left: .25rem;
+}
+
+.message {
+	text-align: center;
+	font-size: 1.5rem;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	margin-bottom: 3rem;
+	margin-top: -2rem;
+}
+

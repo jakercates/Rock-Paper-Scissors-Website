@@ -1,10 +1,38 @@
 <html> 
 	<head> 
 		<title> RPC </title>
-		<script src="scripts/script.js"> </script>
+		<link rel="stylesheet" href="css/style.css" type="text/css">
+		
 	</head>
 
-	<body> 
-		<button onclick="computerPlay()"> Button play</button>	
+	<body>
+	<div> 
+		<div class='welcome'> 
+			<h2 id='header'> Rock, Paper, Scissors! </h2>
+		</div>
+
+		<div class='scoreboard'>
+			<div class='userScore'>
+				<span class='scoreLabel'> Your Score </span>
+				<span class='score1'> 0 </span>
+			</div>
+			<div class='computerScore'>
+				<span class='scoreLabel'> CPU Score </span>
+				<span class='score2'> 0 </span>
+			</div>
+		</div>
+
+		<div class="message">
+			<p id="pMessage"> Select rock, paper or scissors! </p>
+		</div>
+
+		<div class="btns">
+			<button class='rockBtn'> Rock </button>
+			<button class='paperBtn'> Paper </button>
+			<button class='scissorsBtn'> Scissors </button>
+		</div>
+	</div>
+
+	<script src="scripts/script.js"> </script>
 	</body>
 </html> 

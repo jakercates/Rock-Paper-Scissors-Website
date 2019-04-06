@@ -1,3 +1,8 @@
+let userScore = 0;
+let computerScore = 0;
+let userWin = 0;
+
+//returns the computer's choice randomly
 function computerPlay()
 {
 	choiceNum = Math.floor(Math.random() * 3);
@@ -20,12 +25,14 @@ function computerPlay()
 	return computerChoice; 
 }
 
-userWin = 0;  
+//returns a message depicting the result, and updates userWin with 0,1 or 2. 
+//0 being tie, 1 being user win, 2 being cpu win.
 function playRound(playerSelection, computerSelection)
 {
+
 	if(playerSelection == computerSelection)
 	{
-		message = "Tie! " + playerSelection + " ties with " + computerSelection + ". Choose to play again.";
+		message = "Tie! Select again.";
 		userWin = 0;
 	}
 
@@ -63,43 +70,53 @@ function playRound(playerSelection, computerSelection)
 		message = "You Win! Scissors beats paper.";
 		userWin = 1; 
 	}
-
 	return message;
 }
 
-
-function game()
+//takes the mouse event and determinees button pressed(rock,paper,scissors)
+//sets the message, updates the score, and DOM manipulation to reflect changes
+function userPicked(e)
 {
-	let userScore = 0;
-	let computerScore = 0;
-	while(userScore < 3 && computerScore < 3)
+	computerSelection = computerPlay();
+
+	if(e.target.className == "paperBtn")
 	{
-		userInput = prompt("Rock, Paper, or Scissors?");
-		computerInput = computerPlay();
-		message = playRound(userInput, computerInput);
-		console.log(message);
-
-		switch(userWin)
-		{
-			case 0:
-			break;
-
-			case 1:
-			userScore = userScore + 1;
-			break;
-
-			case 2:
-			computerScore = computerScore + 1;
-			break; 
-		}
+		message = playRound('paper', computerSelection);
 	}
-
-	if(userScore == 3)
+	else if(e.target.className == "rockBtn")
 	{
-		alert("You win!");
+		message = playRound('rock', computerSelection);
 	}
 	else
 	{
-		alert("You lose!");
+		message = playRound('scissors', computerSelection);
 	}
+
+	par = document.querySelector('#pMessage');
+	par.textContent = message;	
+	switch(userWin)
+	{
+		case 0:
+		break;
+
+		case 1:
+		userScore = userScore + 1;
+		break;
+
+		case 2:
+		computerScore = computerScore + 1;
+		break; 
+	}
+
+	score1 = document.querySelector('.score1');
+	score2 = document.querySelector('.score2');
+	score1.textContent = userScore;
+	score2.textContent = computerScore; 
 }
+
+paperBtn = document.querySelector('.paperBtn');
+paperBtn.addEventListener('click', userPicked);
+rockBtn = document.querySelector('.rockBtn');
+rockBtn.addEventListener('click', userPicked);
+scissorsBtn = document.querySelector('.scissorsBtn');
+scissorsBtn.addEventListener('click', userPicked);
